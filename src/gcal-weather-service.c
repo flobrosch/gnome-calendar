@@ -1404,7 +1404,7 @@ start_timer (GcalWeatherService  *self)
       gcal_timer_start (self->duration_timer);
 
       schedule_midnight (self);
-      gcal_timer_start (self->duration_timer);
+      gcal_timer_start (self->midnight_timer);
     }
 }
 
