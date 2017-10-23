@@ -50,6 +50,7 @@ sources = files(
   'gcal-window.c',
   'gcal-weather-service.c',
   'gcal-weather-info.c',
+  'gcal-timer.c'
 )
 
 gnome.mkenums(
