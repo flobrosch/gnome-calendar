@@ -27,6 +27,12 @@
 
 G_BEGIN_DECLS
 
+extern const guint GCAL_WEATHER_CHECK_INTERVAL_RENEW_DFLT;
+extern const guint GCAL_WEATHER_CHECK_INTERVAL_NEW_DFLT;
+extern const guint GCAL_WEATHER_VALID_TIMESPAN_DFLT;
+extern const guint GCAL_WEATHER_FORECAST_MAX_DAYS_DFLT;
+
+
 #define GCAL_TYPE_WEATHER_SERVICE (gcal_weather_service_get_type())
 
 G_DECLARE_FINAL_TYPE (GcalWeatherService, gcal_weather_service, GCAL, WEATHER_SERVICE, GObject)
@@ -34,7 +40,8 @@ G_DECLARE_FINAL_TYPE (GcalWeatherService, gcal_weather_service, GCAL, WEATHER_SE
 
 GcalWeatherService* gcal_weather_service_new                (GTimeZone          *time_zone,
                                                              guint               max_days,
-                                                             guint               check_interval,
+                                                             guint               check_interval_new,
+                                                             guint               check_interval_renew,
                                                              gint64              valid_timespan);
 
 GTimeZone*          gcal_weather_service_get_time_zone      (GcalWeatherService *self);
@@ -51,7 +58,11 @@ guint               gcal_weather_service_get_max_days       (GcalWeatherService 
 
 gint64              gcal_weather_service_get_valid_timespan (GcalWeatherService *self);
 
-guint               gcal_weather_service_get_check_interval_renew (GcalWeatherService *self);
+guint               gcal_weather_service_get_check_interval_new
+                                                            (GcalWeatherService *self);
+
+guint               gcal_weather_service_get_check_interval_renew
+                                                            (GcalWeatherService *self);
 
 GSList*             gcal_weather_service_get_weather_infos  (GcalWeatherService *self);
 
