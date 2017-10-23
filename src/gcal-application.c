@@ -37,7 +37,7 @@
 
 #define CSS_FILE "/org/gnome/calendar/gtk-styles.css"
 
-#define WEATHER_CHECK_INTERVAL_RENEW 2*60*60  /* seconds */
+#define WEATHER_CHECK_INTERVAL_RENEW 3*60*60  /* seconds */
 #define WEATHER_VALID_TIMESPAN       24*60*60 /* seconds */
 #define FORECAST_MAX_DAYS            3
 
