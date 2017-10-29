@@ -51,6 +51,20 @@
                       </packing>
                     </child>
                     <child>
+                      <object class="GtkLabel" id="temp_label">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <style>
+                          <class name="temp-label" />
+                        </style>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
                       <object class="GtkLabel" id="overflow_label">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
