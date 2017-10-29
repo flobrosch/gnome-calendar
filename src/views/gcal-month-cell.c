@@ -33,7 +33,6 @@ struct _GcalMonthCell
 
   GtkLabel           *day_label;    /* unowned */
   GtkImage           *weather_icon; /* unowned */
-  GtkLabel           *temp_label;   /* unowned */
   GtkWidget          *overflow_button;
   GtkWidget          *overflow_label;
   GtkWidget          *overlay;
@@ -425,7 +424,6 @@ gcal_month_cell_class_init (GcalMonthCellClass *klass)
 
   gtk_widget_class_bind_template_child (widget_class, GcalMonthCell, day_label);
   gtk_widget_class_bind_template_child (widget_class, GcalMonthCell, weather_icon);
-  gtk_widget_class_bind_template_child (widget_class, GcalMonthCell, temp_label);
   gtk_widget_class_bind_template_child (widget_class, GcalMonthCell, overflow_button);
   gtk_widget_class_bind_template_child (widget_class, GcalMonthCell, overflow_label);
   gtk_widget_class_bind_template_child (widget_class, GcalMonthCell, overlay);
@@ -504,18 +502,13 @@ gcal_month_cell_set_weather (GcalMonthCell   *self,
   if (info == NULL)
     {
       gtk_image_clear (self->weather_icon);
-      gtk_label_set_text (self->temp_label, "");
     }
   else
     {
       const gchar* icon_name; /* unowned */
-      const gchar* temp_str;  /* unwoned */
 
       icon_name = gcal_weather_info_get_icon_name (info);
-      temp_str = gcal_weather_info_get_temperature (info);
-
       gtk_image_set_from_icon_name (self->weather_icon, icon_name, GTK_ICON_SIZE_SMALL_TOOLBAR);
-      gtk_label_set_text (self->temp_label, temp_str);
     }
 }
 
