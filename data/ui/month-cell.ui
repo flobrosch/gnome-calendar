@@ -38,32 +38,43 @@
                     <property name="can-focus">False</property>
                     <property name="spacing">6</property>
                     <property name="valign">center</property>
-                    <child type="center">
+                    <child>
+                      <object class="GtkImage" id="weather_icon">
+                        <property name="can-focus">False</property>
+                        <property name="visible">True</property>
+                        <property name="pixel_size">16</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
                       <object class="GtkLabel" id="overflow_label">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="ellipsize">end</property>
+                        <property name="hexpand">true</property>
                       </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">3</property>
+                      </packing>
                     </child>
                     <child>
                       <object class="GtkLabel" id="day_label">
                         <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+                        <property name="can-focus">True</property>
                         <style>
                           <class name="day-label" />
                         </style>
                       </object>
                       <packing>
-                        <property name="pack-type">end</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="weather_icon">
-                        <property name="can-focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
-                      </object>
-                      <packing>
-                        <property name="pack-type">end</property>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">4</property>
                       </packing>
                     </child>
                   </object>
